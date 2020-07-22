@@ -11,6 +11,16 @@
             <el-menu-item index="/categories/create">新建分类</el-menu-item>
             <el-menu-item index="/categories/list">分类列表</el-menu-item>
           </el-menu-item-group>
+          <el-menu-item-group>
+            <template slot="title">物品</template>
+            <el-menu-item index="/items/create">新建物品</el-menu-item>
+            <el-menu-item index="/items/list">物品列表</el-menu-item>
+          </el-menu-item-group>
+          <el-menu-item-group>
+            <template slot="title">英雄</template>
+            <el-menu-item index="/heroes/create">新建英雄</el-menu-item>
+            <el-menu-item index="/heroes/list">英雄列表</el-menu-item>
+          </el-menu-item-group>
         </el-submenu>
       </el-menu>
     </el-aside>
@@ -50,27 +60,26 @@
 export default {
   data() {
     return {
-      defaultActive : '/categories/create'
+      defaultActive: "/categories/create"
     };
   },
-   watch: {
-    $route () {
-      this.setCurrentRoute()
+  watch: {
+    $route() {
+      this.setCurrentRoute();
     }
   },
   methods: {
-    setCurrentRoute () {
-      if(this.$route.path.includes('/categories/edit')){
-        this.defaultActive = '/categories/create'
-      }
-      else{
-        this.defaultActive = this.$route.path
+    setCurrentRoute() {
+      if (this.$route.path.includes("/categories/edit")) {
+        this.defaultActive = "/categories/create";
+      } else {
+        this.defaultActive = this.$route.path;
       }
       //关键   通过他就可以监听到当前路由状态并激活当前菜单
     }
   },
-  created () {
-    this.setCurrentRoute()
+  created() {
+    this.setCurrentRoute();
   }
 };
 </script>
