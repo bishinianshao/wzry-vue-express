@@ -42,7 +42,7 @@ node_modules/
 jspm_packages/
 
 
-uploads/
+serve/uploads/
 # TypeScript v1 declaration files
 typings/
 
